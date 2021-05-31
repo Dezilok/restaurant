@@ -14,7 +14,7 @@ class TestUserAdmin:
 
     def test_search(self, admin_client):
         url = reverse("admin:users_user_changelist")
-        response = admin_client.get(url, data={"q": "test"})
+        response = admin_client.get(url, data={"q": "tests"})
         assert response.status_code == 200
 
     def test_add(self, admin_client):
@@ -25,13 +25,13 @@ class TestUserAdmin:
         response = admin_client.post(
             url,
             data={
-                "username": "test",
+                "username": "tests",
                 "password1": "My_R@ndom-P@ssw0rd",
                 "password2": "My_R@ndom-P@ssw0rd",
             },
         )
         assert response.status_code == 302
-        assert User.objects.filter(username="test").exists()
+        assert User.objects.filter(username="tests").exists()
 
     def test_view_user(self, admin_client):
         user = User.objects.get(username="admin")
