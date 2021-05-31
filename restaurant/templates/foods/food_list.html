@@ -7,7 +7,7 @@
 
 <ul>
   {% for food in food_list %}
-    <li><a href="#TODO">{{ food.name }}</a></li>
+    <li><a href="{% url 'foods:detail' food.slug %}">{{ food.name }}</a></li>
   {% endfor %}
 </ul>
 {% endblock content %}

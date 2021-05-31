@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+
+{% load static %}
+
+{% block title %}Food: {{ food.name }}{% endblock %}
+
+{% block content %}
+
+  <h2>{{ food.name }}</h2>
+  <h4>{{ food.foodType }}</h4>
+  <div>
+    <div class="col-md-offset-4">
+      <img  class="img-thumbnail" src="{{ food.image.url }}" >
+
+    </div>
+    <div>
+      <p class="lh-1">Description: {{ food.description }}</p>
+    </div>
+    <p>Price: {{ food.price }}</p>
+  </div>
+
+{% endblock content %}
+
+

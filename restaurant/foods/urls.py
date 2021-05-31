@@ -10,4 +10,9 @@ urlpatterns = [
         view=views.FoodListView.as_view(),
         name='list'
     ),
+    path(
+        route='<slug:slug>/',
+        view=views.FoodDetailView.as_view(),
+        name='detail'
+    ),
 ]
