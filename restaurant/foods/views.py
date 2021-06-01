@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
 from .models import Food
 
@@ -9,3 +9,10 @@ class FoodListView(ListView):
 
 class FoodDetailView(DetailView):
     model = Food
+
+
+class FoodCreateView(CreateView):
+    model = Food
+    fields = ['name', 'image', 'price', 'description', 'foodType']
+
+

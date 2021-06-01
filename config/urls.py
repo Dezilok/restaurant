@@ -17,7 +17,7 @@ urlpatterns = [
     path("users/", include("restaurant.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
-    path('menu/', include('restaurant.foods.urls', namespace='menu')),
+    path('foods/', include('restaurant.foods.urls', namespace='Foods')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS

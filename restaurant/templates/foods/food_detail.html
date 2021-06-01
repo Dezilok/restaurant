@@ -9,15 +9,22 @@
   <h2>{{ food.name }}</h2>
   <h4>{{ food.foodType }}</h4>
   <div>
+  {% if food.image %}
     <div class="col-md-offset-4">
       <img  class="img-thumbnail" src="{{ food.image.url }}" >
 
     </div>
+  {% endif %}
+  {% if food.description %}
     <div>
       <p class="lh-1">Description: {{ food.description }}</p>
     </div>
+  {% endif %}
+  {% if food.proce %}
     <p>Price: {{ food.price }}</p>
+  {% endif %}
   </div>
+
 
 {% endblock content %}
 
