@@ -10,6 +10,8 @@
     <li><a href="{% url 'foods:detail' food.slug %}">{{ food.name }}</a></li>
   {% endfor %}
 </ul>
-<hr/>
-<p><a class="btn btn-primary" href="{% url 'foods:add' %}" role="button">Add Food</a></p>
+  {% if perms.food.can_add_food %}
+    <hr/>
+    <p><a class="btn btn-primary" href="{% url 'foods:add' %}" role="button">Add Food</a></p>
+  {% endif %}
 {% endblock content %}
