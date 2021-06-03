@@ -15,5 +15,5 @@ class FoodDetailView(DetailView):
 class FoodCreateView(CreateView):
     model = Food
     fields = ['name', 'image', 'price', 'description', 'foodType']
-    permission_required = 'food.can_add_food'
+    permission_required = 'is_staff'
 
