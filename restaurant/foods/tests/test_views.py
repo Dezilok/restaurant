@@ -84,4 +84,4 @@ def test_food_create_form_valid(rf, admin_user):
     assert food.foodType == Food.FoodType.MEAL
     assert food.price == 15
 
-#for test
+#for test 2
