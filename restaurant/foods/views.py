@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView, CreateView
-from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 from .models import Food
 
@@ -12,8 +12,11 @@ class FoodDetailView(DetailView):
     model = Food
 
 
-class FoodCreateView(CreateView):
+class FoodCreateView(UserPassesTestMixin, CreateView):
+    def test_func(self):
+        return self.request.user.is_staff
+
     model = Food
     fields = ['name', 'image', 'price', 'description', 'foodType']
-    permission_required = 'is_staff'
+
 
