@@ -1,3 +1,5 @@
+import pytest
+
 from django.template.defaultfilters import slugify
 
 import factory
@@ -15,3 +17,8 @@ class FoodFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Food
+
+
+@pytest.fixture
+def food():
+    return FoodFactory()

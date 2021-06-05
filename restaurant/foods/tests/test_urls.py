@@ -2,14 +2,14 @@ import pytest
 
 from django.urls import reverse, resolve
 
-from .factories import FoodFactory
+from .factories import FoodFactory, food
 
 pytestmark = pytest.mark.django_db
 
 
-@pytest.fixture
-def food():
-    return FoodFactory()
+# @pytest.fixture
+# def food():
+#     return FoodFactory()
 
 
 def test_list_reverse():

@@ -20,4 +20,9 @@ urlpatterns = [
         view=views.FoodDetailView.as_view(),
         name='detail'
     ),
+    path(
+        route="<slug:slug>/update/",
+        view=views.FoodUpdateView.as_view(),
+        name='update'
+    ),
 ]

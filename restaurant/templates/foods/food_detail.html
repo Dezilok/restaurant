@@ -24,9 +24,12 @@
     <p>Price: {{ food.price }}</p>
   {% endif %}
   </div>
-
-
+  {% if user.is_staff %}
+    <p>
+      <a class="btn btn-primary" href="{% url 'foods:update' food.slug %}" role="button"> Update</a>
+    </p>
+  {% endif %}
 {% endblock content %}
 
 
-181
+
