@@ -1,7 +1,7 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from .models import Food
-from ..utils.Mixins import AccessOnlyForStaff
+from ..utils.viewmixins import AccessOnlyForStaffMixin
 
 
 class FoodListView(ListView):
@@ -12,12 +12,12 @@ class FoodDetailView(DetailView):
     model = Food
 
 
-class FoodCreateView(AccessOnlyForStaff, CreateView):
+class FoodCreateView(AccessOnlyForStaffMixin, CreateView):
     model = Food
     fields = ['name', 'image', 'price', 'description', 'foodType']
 
 
-class FoodUpdateView(AccessOnlyForStaff, UpdateView):
+class FoodUpdateView(AccessOnlyForStaffMixin, UpdateView):
     model = Food
     fields = [
         'name',
